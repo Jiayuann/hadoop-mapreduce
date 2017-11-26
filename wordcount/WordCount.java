@@ -79,7 +79,8 @@ public class WordCount extends Configured implements Tool {
        while (values.hasNext()) {
          sum += values.next().get();
        }
-       output.collect(key, new IntWritable(sum));
+       if(sum > 5){
+	output.collect(key, new IntWritable(sum));}
      }
    }
 
